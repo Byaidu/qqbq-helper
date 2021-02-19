@@ -1,0 +1,74 @@
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+</head>
+<body>
+    <div id="watch-example">
+        <p>
+          请输入关键字：
+          <input v-model="keyword">
+        </p>
+        <p>共计 {{items.length}} 项</p>
+        <table style="border:1px solid #000">
+            <tr>
+                <td>name</td>
+                <td>desc</td>
+                <td>tag</td>
+                <td>id</td>
+                <td>link</td>
+                </tr>
+            <tr v-for="item in items">
+            <td>{{ item.name }}</td>
+            <td>{{ item.desc }}</td>
+            <td>{{ item.tag }}</td>
+            <td>{{ item.id }}</td>
+            <td><a v-bind:href="'https://gxh.vip.qq.com/club/themes/mobile/bq/html/detail.html?id='+item.id">下载地址</a></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var watchExampleVM = new Vue({
+          el: '#watch-example',
+          data: {
+            database:[],
+            keyword: '',
+            items: [{
+                name:'加载中……',
+                desc:'',
+                tag:'',
+                id:0,
+            }],
+          },
+          watch: {
+            keyword: function (newQuestion, oldQuestion) {
+              this.debouncedGetAnswer()
+            }
+          },
+          created: function () {
+            this.debouncedGetAnswer = _.debounce(this.getAnswer, 500)
+          },
+          methods: {
+            getAnswer: function () {
+              function check(item){
+                  return (item.id+' '+item.desc+' '+item.name+' '+item.tag).toLowerCase().indexOf(this.keyword.toLowerCase())>=0
+              }
+              console.log('start')
+              this.items=this.database.filter(check,this)
+              console.log('end')
+            }
+          }
+        })
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET","https://raw.githubusercontent.com/Byaidu/qqbq-helper/main/db.json",true);
+        xmlhttp.send();
+        xmlhttp.onreadystatechange=function()
+        {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+                watchExampleVM.database=JSON.parse(xmlhttp.responseText);
+                watchExampleVM.getAnswer()
+            }
+        }
+    </script>
+</body>
