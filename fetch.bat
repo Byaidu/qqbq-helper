@@ -1,0 +1,1 @@
+curl https://gxh.vip.qq.com/qqshow/admindata/comdata/vipEmoji_item_[194868-208944]/xydata.js -o xydata\#1.js -C -
