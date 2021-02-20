@@ -33,7 +33,7 @@
             database:[],
             keyword: '',
             items: [{
-                name:'',
+                name:'加载中……',
                 desc:'',
                 tag:'',
                 id:0,
@@ -59,9 +59,6 @@
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.open("GET","https://cdn.jsdelivr.net/gh/byaidu/qqbq-helper/db.json",true);
         xmlhttp.send();
-        xmlhttp.onprogress = function (event) {
-            watchExampleVM.items[0].name = '加载中…… '+event.loaded;
-        }
         xmlhttp.onreadystatechange=function()
         {
             if (xmlhttp.readyState==4 && xmlhttp.status==200)
