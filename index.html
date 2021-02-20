@@ -53,9 +53,7 @@
               function check(item){
                   return (item.id+' '+item.desc+' '+item.name+' '+item.tag).toLowerCase().indexOf(this.keyword.toLowerCase())>=0
               }
-              console.log('start')
               this.items=this.database.filter(check,this)
-              console.log('end')
             }
           }
         })
