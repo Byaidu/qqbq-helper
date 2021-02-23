@@ -31,10 +31,6 @@ input {
     font-size: medium;
 }
 
-.total {
-
-}
-
 table td,table tr {
     text-align: center;
     color: #171F08;
@@ -42,4 +38,29 @@ table td,table tr {
 
 table {
     width: 100%;
+}
+
+.downloadLink {
+    width: 70px;
+    font-size: 10px;
+}
+
+.ID_index {
+    color: #239CCD;
+    font-size: 10px;
+}
+
+.desc {
+    font-size:12px;
+    color: #2B2B2B;
+}
+
+.EXPname {
+    font-size: 13PX;
+    color: #151515;
+}
+
+.expTag {
+    font-size: 13px;
+    color:#9B9B9B ;
 }

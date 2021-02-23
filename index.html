@@ -2,6 +2,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <title>QQbq-Helper</title>
 </head>
 <body>
     <p align="center" class="titl">QQbq-Helper</p>
@@ -10,7 +11,7 @@
           输入关键字以开始 👉 &nbsp;
           <input v-model="keyword">
         </p>
-        <p align="center" class="total">📌 共计&nbsp;<i class="count">{{items.length}}&nbsp;</i> 项</p>
+        <p align="center">📌 共计&nbsp;<i class="count">{{items.length}}&nbsp;</i> 项</p>
         <table style="border:1px solid #79A228;padding: 20px auto;">
             <tr>
                 <td>名称</td>
@@ -20,11 +21,11 @@
                 <td>链接</td>
                 </tr>
             <tr v-for="item in items">
-            <td>{{ item.name }}</td>
-            <td>{{ item.desc }}</td>
-            <td>{{ item.tag }}</td>
-            <td>{{ item.id }}</td>
-            <td><a v-bind:href="'https://gxh.vip.qq.com/club/themes/mobile/bq/html/detail.html?id='+item.id">下载地址</a></td>
+            <td class="EXPname">{{ item.name }}</td>
+            <td class="desc">{{ item.desc }}</td>
+            <td class="expTag">{{ item.tag }}</td>
+            <td class="ID_index">{{ item.id }}</td>
+            <td class="downloadLink"><a v-bind:href="'https://gxh.vip.qq.com/club/themes/mobile/bq/html/detail.html?id='+item.id">下载地址</a></td>
             </tr>
         </table>
     </div>
