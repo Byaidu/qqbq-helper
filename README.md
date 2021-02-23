@@ -1,4 +1,4 @@
-# qqbq-helper
+# QQbq-helper
 
 搜索并安装被官方屏蔽隐藏下架的 QQ 表情包
 
@@ -12,4 +12,4 @@
 
 ## 功能预览
 
-![](https://s3.ax1x.com/2021/02/20/y4wZb8.png)
+![](https://i.loli.net/2021/02/23/NLBGclV5sR3PMjS.png)

@@ -1,0 +1,66 @@
+a {
+    text-decoration: none;
+    color: #248F4A;
+}
+
+.titl {
+    font-weight: 300;
+    font-size: 30px;
+}
+
+input {
+    outline: none;
+
+    width: 250px;
+    height: 30px;
+
+    padding-left: 5px;
+    border: none;
+    /* border: 1.5px olivedrab solid; */
+    border-bottom: 2px olivedrab solid;
+    font-size: larger;
+}
+
+.keyword_label {
+    font-size: larger;
+    vertical-align: baseline;
+}
+
+.count {
+    color: olivedrab;
+    font-size: medium;
+}
+
+table td,table tr {
+    text-align: center;
+    color: #171F08;
+}
+
+table {
+    width: 100%;
+}
+
+.downloadLink {
+    width: 70px;
+    font-size: 10px;
+}
+
+.ID_index {
+    color: #239CCD;
+    font-size: 10px;
+}
+
+.desc {
+    font-size:12px;
+    color: #2B2B2B;
+}
+
+.EXPname {
+    font-size: 13PX;
+    color: #151515;
+}
+
+.expTag {
+    font-size: 13px;
+    color:#9B9B9B ;
+}
